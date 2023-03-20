@@ -40,6 +40,8 @@ function todoAdd(e) {
 
     // check에 클릭 이벤트 추가
     check.addEventListener("click", todoCheck);
+    // button에 클릭 이벤트 추가
+    button.addEventListener("click", todoDelete);
 }
 
 // check에 들어가는 todoCheck 함수 작성
@@ -55,8 +57,10 @@ function todoCheck(e) {
     }
 }
 
-// 버튼에 클릭이벤트를 추가해서
+// 버튼에 클릭 이벤트를 추가해서
 // 선택된 li가 삭제되는 함수 작성 remove()
-function todoDelete () {
-    
+function todoDelete (e) {
+    const button = e.target;
+    const li = button.parentNode;
+    li.remove();
 }
