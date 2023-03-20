@@ -18,9 +18,23 @@ function todoAdd(e) {
 
     // li태그 생성 ul찾아서 추가
     const li = document.createElement("li");
-    li.innerHTML = todoValue;
+    
+    // li태그에 추가할 내용 : 체크박스, 텍스트노드, 버튼
+    // 태그 생성
+    const check = document.createElement("input");
+    check.type = "checkbox";
+    const text = document.createTextNode(todoValue);
+    const button = document.createElement("button");
+    button.innerHTML = "X";
+
+    // li 태그에 생성한 태그 추가
+    li.appendChild(check);
+    li.appendChild(text);
+    li.appendChild(button);
 
     //document.querySelector("#todolist"); ul
     document.querySelector("#todolist").appendChild(li);
 
+    // input의 value값을 "" 으로 바꿈
+    todoForm.firstElementChild.value ="";
 }
