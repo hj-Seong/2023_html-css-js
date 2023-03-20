@@ -9,7 +9,11 @@
 
 const body = document.querySelector("body");
 // 랜덤한 문자열을 사용하기 위해 배열과 함께 사용
+// 배열의 인덱스를 랜덤하게 접근
+const images = ["0.jpg","1.jpg","2.jpg"];
 
+// 랜덤한 숫자값 0~2 까지 생성
+const randumIndex = Math.floor(Math.random()*images.length);
 
-body.style.backgroundImage = "url(./img/0.jpg)"
-body.style.backgroundSize = "cover"
+body.style.backgroundImage = `url(./img/${images[randumIndex]})`;
+body.style.backgroundSize = "cover";
