@@ -23,6 +23,9 @@ function onLogin(e){
 
     // 화면에 글자를 보여주기위해 class 제거
     greeting.classList.remove("hidden");
+    document.querySelector("#todo-form").classList.remove("hidden");
+    document.querySelector("#todolist").classList.remove("hidden");
+    
     // 로그인 창을 보이지 않게하기위해 class 추가
     loginForm.classList.add("hidden");
 
