@@ -4,6 +4,12 @@
     font-weight: 700;
     font-style: normal;
 }
+@font-face {
+    font-family: 'KCCChassam';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCChassam.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* 태그에 대한 디자인 */
 h1 {
@@ -24,8 +30,41 @@ h1 {
     text-align: center;
 }
 
+/* todolist 디자인 */
+#todolist {
+    margin: auto; /*중앙정렬*/
+    max-width: 400px;
+    margin-top: 20px;
+    padding: 0 30px;
+}
+#todolist li {
+    font-family: 'KCCChassam';
+    clear: both;
+    margin: 5px 0;
+}
+
+#todolist li button {
+    float: right;
+}
+#todolist li span {
+    position:absolute;
+    right: 60px;
+    margin-top: 8px;
+    font-size: 0.7rem;
+}
+#todolist li button {
+    background-color: transparent;
+    border: solid black 1px;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 2px 5px;
+}
+
+
+
 /* input[type="text"], [type="submit"] */
 input[type="text"] {
+    font-family: 'KCCChassam';
     background-color: transparent;
     border: none;
     border-bottom: 1px white solid;
