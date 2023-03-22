@@ -8,6 +8,14 @@
 const todoForm = document.querySelector("#todo-form");
 todoForm.addEventListener("submit", todoAdd);
 
+// 할일과 완료한 할일 DOM
+const countPrint = document.querySelector("#count");
+
+// 전역으로 관리할 전체 할일개수와 체크한 개수
+let allCount = 0;
+let checkedCount = 0;
+
+
 // 투두를 추가하는 함수
 function todoAdd(e) {
     e.preventDefault();
@@ -42,6 +50,13 @@ function todoAdd(e) {
 
     // input의 value값을 "" 으로 바꿈
     todoForm.firstElementChild.value ="";
+    
+    // 할일이 추가되었다면 갯수를 세어서 출력 getAllCount()
+    countPrint.innerHTML = `할일 : ${getAllCount()} / 완료한 할일: ${getCheckedCount()}`;
+    
+    // 전역변수에 접근해서 Allcount 개수 증가
+    allCount++;
+    console.log("전체 개수",allCount);
 
     // check에 클릭 이벤트 추가
     check.addEventListener("click", todoCheck);
@@ -57,9 +72,17 @@ function todoCheck(e) {
     const li = check.parentNode;
     if(check.checked) {
         li.style.color = "lightgray";
+        // 체크했을때 1 추가
+        checkedCount++;
     }else {
         check.parentNode.style.color = "";
+        // 체크해제했을때 1 감소
+        checkedCount--;
     }
+    // 할일이 체크되었다면 갯수를 세어서 출력 getAllCount()
+    countPrint.innerHTML = `할일 : ${getAllCount()} / 완료한 할일: ${getCheckedCount()} `;
+    // 체크한 값 출력
+    console.log("체크한 수",checkedCount);
 }
 
 // 버튼에 클릭 이벤트를 추가해서
@@ -67,5 +90,38 @@ function todoCheck(e) {
 function todoDelete (e) {
     const button = e.target;
     const li = button.parentNode;
+    // 체크가 되어있는지 확인 (체크가 되어있다면 1 감소)
+    const checkbox = li.firstElementChild;
+    if(checkbox.checked) {
+        checkedCount--;
+    }
+
     li.remove();
+    // 할일이 삭제되었다면 갯수를 세어서 출력 getAllCount()
+    countPrint.innerHTML = `할일 : ${getAllCount()} / 완료한 할일: ${getCheckedCount()} `;
+
+    // 전체 할일의 감소를 위해 allCount의 값을 1씩 감소
+    allCount--;
+    console.log("전체 개수",allCount);
+    console.log("체크한 수",checkedCount);
+}
+
+/* Dom을 직접 가져와서 갯수를 확인 */
+// 추가, 삭제, 체크할때마다 갯수를 확인
+// 함수 만들어서 확인
+
+// 전체 갯수 확인
+function getAllCount() {
+    const todolist = document.querySelector("#todolist");
+    // 1) return을 통해서 값을 전달
+    // 2) DOM을 가져와서 출력
+    console.log(todolist.childElementCount);
+    return todolist.childElementCount;
+}
+
+// 체크된 DOM 갯수 가져오기
+function getCheckedCount(){
+    const checkedlist = document.querySelectorAll("#todolist li input[type='checkbox']:checked");
+    console.log(checkedlist.length);
+    return checkedlist.length;
 }
