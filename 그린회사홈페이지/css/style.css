@@ -12,6 +12,7 @@ a { color: black; text-decoration: none;}
     align-items: center;
     padding: 0 20px;
     border-bottom: 1px solid black;
+    transition: all 1s;
 }
 .nav-menu {
     display: flex;
@@ -20,6 +21,7 @@ a { color: black; text-decoration: none;}
     margin: 35px 20px;
     /*li 태그안에 있는 모든 텍스트가 영향*/
     font-size: 1.2rem;
+    transition: all 1s;
 }
 .logo {
     font-size: 1.5rem;
