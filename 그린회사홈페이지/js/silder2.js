@@ -21,7 +21,43 @@ for(let i = 0; i <slider2Buttons.length; i++) {
         // 콜백함수를 통해 쓸수 있다
         // 배열.forEach(function(배열의값, 인덱스){});
         slider2Items.forEach(function(item, index){
-            item.style.left = `${i*-100}%`
+            item.style.left = `${i*-100}%`;
+            console.log(index);
         });
     })
 }
+
+/* 슬라이더 내부에 slider2-dots을 만들어서 버튼 작성 */
+// 형태 : div class="slider2-dots" : dot을 묶는 태그
+//       div class="dot" : 각 슬라이더로 이동하는 dot
+// 어떻게 추가 : slider2Items의 갯수에 따라서 생성 및 추가
+// 어느 위치 : slider2의 하단에 추가
+const dots = document.createElement("div");
+dots.classList.add("slider2-dots");
+
+for (let i = 0; i<slider2Items.length ;i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    dots.appendChild(dot);
+    // dot에 이벤트 리스너 추가
+    dot.addEventListener("click", function (e){
+        // 각각의 슬라이더의 left값 수정
+        slider2Items.forEach(function(item){
+            item.style.left = `${i*-100}%`
+        });
+
+        // 모든 dot의 .on을 제외하고 현재 클릭한 dot 만 .on
+        // 모든 dot? dots의 자식을 통해서 찾을 수 있다
+        // >> dots의 자식들을 반복해서 remove()
+        for (let i = 0; i<dots.children.length ;i++) {
+            dots.children[i].classList.remove("on")
+        }
+
+        // 현재 dot은 무엇? 이벤트 객체
+        e.target.classList.add("on")
+    });
+
+}
+
+const slider2 = document.querySelector("#slider2");
+slider2.appendChild(dots);
