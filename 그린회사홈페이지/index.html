@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/silder.css">
+    <link rel="stylesheet" href="./css/silder2.css">
 </head>
 <body>
     <header class="header">
@@ -38,7 +39,7 @@
         
         <!-- 섹션2 소개(스크롤이벤트) 시작-->
         <a name="intro"></a>
-        <section class="intro-scroll">
+        <section class="intro-scroll" id="intro">
             <div class="green-intro">
                 <h1>그린회사</h1>
                 <p>그린회사는 새로운 50년을 이끌어 갈 수 있도록 최선을 다하겠습니다.</p>
@@ -51,7 +52,26 @@
 
         <!-- 섹션3 사진(슬라이더 버튼) 시작-->
         <a name="pictures"></a>
-        <section class="pictures"></section>
+        <section class="pictures">
+            <div class="picture-wrap">
+                <div class="picture-explan">
+                    <h1>사진설명</h1>
+                    <p>자세한 설명</p>
+                </div>
+                <div class="pucture-buttons" id="slider2-buttons">
+                    <a href="">사진1</a>
+                    <a href="">사진2</a>
+                    <a href="">사진3</a>
+                </div>
+            </div>
+            <!-- 다른형태의 슬라이더 작성 -->
+            <div id="slider2" class="slider2">
+                <div class="slider2-item"></div>
+                <div class="slider2-item"></div>
+                <div class="slider2-item"></div>
+            </div>
+
+        </section>
         <!-- 섹션3 사진 끝-->
 
         <!-- 섹션4 뉴스(스크롤이벤트) 시작-->
@@ -65,5 +85,6 @@
 
     <script src="./js/scroll.js"></script>
     <script src="./js/silder.js"></script>
+    <script src="./js/silder2.js"></script>
 </body>
 </html>

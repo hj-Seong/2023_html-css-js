@@ -75,7 +75,15 @@ section {
     align-items: center;
     background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1)),
     url(../img/2.jpg);
+    padding: 0 20px;
+    opacity: 0;
 }
+/* 이벤트로 클래스가 붙었을 때 디자인*/
+.intro-scroll.scrollon {
+    opacity: 1;
+    transition: all 2s;
+}
+
 
 .intro-scroll .green-intro {
     height: 300px;
@@ -83,15 +91,28 @@ section {
     flex-direction: column;
     justify-content: center;
     padding: 0 30px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
-
+    transform: translateX(-400px);
 }
+/* 이벤트 발생시 추가되는 클래스*/
+.intro-scroll.scrollon .green-intro{
+    transform: translateX(0);
+    transition: all 2.5s;
+}
+
+
 .intro-scroll .green-intro-image {
     width: 100vw;
     /*inherit : 부모의 높이를 가져옴*/
     height: inherit;
+}
+
+/* 섹션3 슬라이더버튼 */
+.pictures {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
 }
 
 
