@@ -2,6 +2,7 @@
 /* 부드러운 스크롤 */
 html {scroll-behavior: smooth;}
 a { color: black; text-decoration: none;}
+h1 { font-size: 3rem; margin: 20px 0; font-weight: bold;}
 
 /* 헤더와 네비게이션바 */
 .header {
@@ -49,9 +50,51 @@ section {
     height: 400px;
     border: 1px solid black;
 }
+/* 섹션1 배너*/
 .banner {
     height: 100vh;
 }
+.banner .scroll-icon {
+    position: absolute;
+    bottom: 50px; left: 50%;
+    font-size: 2rem;
+    animation-name: movingIcon;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+/* 아이콘이 위아래로 움직이는 애니메이션 작성 */
+@keyframes movingIcon {
+    0% {transform: translate(0, 0)}
+    70% {transform: translate(0, 20px)}
+    100% {transform: translate(0, 0)}
+}
+
+/* 섹션2 소개 */
+.intro-scroll {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1)),
+    url(../img/2.jpg);
+}
+
+.intro-scroll .green-intro {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+
+}
+.intro-scroll .green-intro-image {
+    width: 100vw;
+    /*inherit : 부모의 높이를 가져옴*/
+    height: inherit;
+}
+
+
 
 /* 푸터 */
 .footer {
