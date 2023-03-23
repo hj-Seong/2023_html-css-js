@@ -114,7 +114,98 @@ section {
     display: grid;
     grid-template-columns: 2fr 3fr;
 }
+.pictures .picture-wrap {
+    padding: 20px 30px;
+}
+.pictures .picture-wrap .picture-explan {
+    margin-bottom: 40px;
+}
+/* 버튼 디자인 */
+.pictures .picture-wrap .pucture-buttons a {
+    background-color: transparent;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+.pictures .picture-wrap .pucture-buttons a.on {
+    background-color: black;
+    color: white;
+    transition: all 0.3s;
+} 
 
+/* 섹션4 뉴스*/
+
+/*뉴스 카드*/
+.news-cards {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin: 0 20px;
+}
+.card {
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.card .card-image-wrap {
+    height: 150px;
+    background-color: gray;
+    overflow: hidden;
+}
+/*카드 글자*/
+.card .card-text {
+    padding: 20px;
+}
+.card .card-text h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.card .card-text p {
+    font-weight: bold;
+    color: rgb(21, 115, 255);
+}
+.card .card-text span {
+    color: gray;
+}
+.card .card-image-wrap .card-image{
+    height: inherit;
+    background-size: cover;
+}
+
+/* 카드에 마우스를 올렸을때 전환 효과*/
+.card:hover .card-image-wrap .card-image {
+    transform: scale(1.2);
+    transition: all 0.5s;
+    filter: brightness(0.7);
+}
+
+/* scrollon이 추가되었을때 보이는 전환효과*/
+
+
+
+
+/* 카드의 이미지 */
+/*
+.card .card-image-wrap .card-image:nth-child(1)
+는 .card-image-wrap안에서 .card-image가 첫번째인것 모두
+:nth-child() 사용할때 그 시작점에 넣어주기
+*/
+.card:nth-child(1) .card-image-wrap .card-image {
+    background-image: url(../img/0.jpg);
+}
+.card:nth-child(2) .card-image-wrap .card-image {
+    background-image: url(../img/1.jpg);
+}
+.card:nth-child(3) .card-image-wrap .card-image {
+    background-image: url(../img/2.jpg);
+}
+.card:nth-child(4) .card-image-wrap .card-image {
+    background-image: url(../img/0.jpg);
+}
 
 
 /* 푸터 */

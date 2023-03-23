@@ -24,6 +24,12 @@ for(let i = 0; i <slider2Buttons.length; i++) {
             item.style.left = `${i*-100}%`;
             console.log(index);
         });
+        // a태그의 모든 on을 제거
+        for (let i =0 ;i<slider2Buttons.length; i++ ) {
+            slider2Buttons[i].classList.remove("on");
+        }
+        // 현재 a태그에 on을 추가
+        e.target.classList.add("on");
     })
 }
 
