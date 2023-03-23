@@ -5,6 +5,8 @@
 const nav = document.querySelector("#nav");
 // 섹션2 인트로 
 const intro = document.querySelector("#intro");
+// 섹션4 뉴스
+const news = document.querySelector("#news");
 
 /**
  * 스크롤 이벤트로 조건을 걸때 사용할수 있는 속성
@@ -21,7 +23,9 @@ window.addEventListener("scroll", function(){
         // scrollY가 200 미만이면 scrollon 제거
         nav.classList.remove("scrollon");
     }
-
-
+    
+    if(this.scrollY>1000) {
+        news.classList.add("scrollon");
+    }
 
 } )
