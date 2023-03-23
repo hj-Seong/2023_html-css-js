@@ -1,5 +1,10 @@
 /* slider2 디자인 */
 .slider2 {
+    /* 
+    자식 중에 position:absolute가 있다면
+    그 자식의 위치(top/left)를 전체 화면이 아닌 부모화면에서 이동
+    >> .slider2-dots 에서 확인가능 
+    */
     position: relative;
     display: flex;
     flex-wrap: nowrap;

@@ -27,6 +27,7 @@
     position: absolute;
     top: 40%;
     font-size: 5rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .prev {
@@ -49,4 +50,12 @@
 .slider>.slider-item:nth-child(3) {
     background-image: url(../img/2.jpg);
     background-size: cover;
+}
+
+/* 슬라이더 안에 글자를 추가 */
+.slider-item .slider-text {
+    text-align: center;
+    width: 70vw;
+    margin: auto;
+    margin-top: 40vh;
 }
